@@ -1,0 +1,11 @@
+<div class="container mt-4">
+    <h2>Lista Prodotti</h2>
+    <ul class="list-group">
+      <li *ngFor="let product of products" (click)="selectProduct(product)" 
+          class="list-group-item list-group-item-action">
+        {{ product.name }} - ${{ product.price }}
+      </li>
+    </ul>
+  
+    <app-product-detail-component *ngIf="selectedProduct" [product]="selectedProduct"></app-product-detail-component>
+  </div>
